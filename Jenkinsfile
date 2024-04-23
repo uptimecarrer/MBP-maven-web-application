@@ -10,7 +10,7 @@ node{
   stage('BuildArtifact'){      
 sh "${mavenHome}/bin/mvn clean package"
 }
-  stage('SonarQubeReport'){  
+ stage('SonarQubeReport'){  
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
    stage('UploadArtifactIntoNexus'){
