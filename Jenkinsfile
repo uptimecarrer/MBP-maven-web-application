@@ -1,5 +1,5 @@
 node{
-  def mavenHome = tool name : 'maven-3.9.6'
+ def mavenHome = tool name : 'maven-3.9.6'
   /*echo "The job name:$(env, JOB_NAME)"
   echo "The build number:$(env, BUILD_NUMBER)"
   echo "The node name:$(env, NODE_NAME)" */
