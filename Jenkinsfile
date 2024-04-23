@@ -3,11 +3,11 @@ node{
   /*echo "The job name:$(env, JOB_NAME)"
   echo "The build number:$(env, BUILD_NUMBER)"
   echo "The node name:$(env, NODE_NAME)" */
-  stage('CheckoutCode'){ 
+  stage('CheckoutSourceCode'){ 
    git branch: 'development', changelog: false,
   credentialsId: '9cf512a0-b058-48e4-9189-1d53af782bdd', poll: false, url: 'https://github.com/uptimecarrer/MBP-maven-web-application.git'
   }
- stage('BuildArtifact'){      
+ stage('MavenBuildArtifact'){      
 sh "${mavenHome}/bin/mvn clean package"
 }
   stage('SonarQubeReport'){  
