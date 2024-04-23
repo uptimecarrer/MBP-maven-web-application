@@ -22,7 +22,7 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.
 } 
 }
  stage('Email Notification'){
-    mail bcc: '', body: '''Hi Team,
+   mail bcc: '', body: '''Hi Team,
 
 Welcome to Uptime Career.....
 .......This is MBP-Scripted pipeline.....
