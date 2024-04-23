@@ -7,7 +7,7 @@ node{
    git branch: 'development', changelog: false,
   credentialsId: '9cf512a0-b058-48e4-9189-1d53af782bdd', poll: false, url: 'https://github.com/uptimecarrer/MBP-maven-web-application.git'
   }
-  stage('BuildArtifact'){      
+ stage('BuildArtifact'){      
 sh "${mavenHome}/bin/mvn clean package"
 }
   stage('SonarQubeReport'){  
