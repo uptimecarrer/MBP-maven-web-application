@@ -1,11 +1,10 @@
-
 node{
   def mavenHome = tool name : 'maven-3.9.6'
   /*echo "The job name:$(env, JOB_NAME)"
   echo "The build number:$(env, BUILD_NUMBER)"
   echo "The node name:$(env, NODE_NAME)" */
   stage('CheckoutCode'){ 
-   git branch: 'qa', changelog: false,
+   git branch: 'test', changelog: false,
   credentialsId: '9cf512a0-b058-48e4-9189-1d53af782bdd', poll: false, url: 'https://github.com/uptimecarrer/MBP-maven-web-application.git'
   }
   stage('BuildArtifact'){      
@@ -23,7 +22,7 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.
 } 
 }
  stage('Email Notification'){
-  mail bcc: '', body: '''Hi Team,
+    mail bcc: '', body: '''Hi Team,
 
 Welcome to Uptime Career.....
 .......This is MBP-Scripted pipeline.....
@@ -33,3 +32,4 @@ R Raveendra.''', cc: '', from: '', replyTo: '', subject: 'Script Build is Done '
 } 
 }
   
+
